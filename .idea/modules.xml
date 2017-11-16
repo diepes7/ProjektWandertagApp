@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WandertagApp.iml" filepath="$PROJECT_DIR$/WandertagApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjektWandertagApp.iml" filepath="$PROJECT_DIR$/ProjektWandertagApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
