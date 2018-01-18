@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -29,6 +30,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +64,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private ArrayList<User> al_users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
+        createUsers();
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -87,14 +91,53 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent i = new Intent(getApplicationContext(), MapsActivity.class);
-                //startActivity(i);
-                attemptLogin();
+                String rolle = LoginSuccessful(mEmailView.getText().toString(), mPasswordView.getText().toString());
+                if (rolle!=null) {
+                    if (rolle.equals("Admin")) {
+                        Intent i = new Intent(getApplicationContext(), VerwaltungPage.class);
+                        startActivity(i);
+                        attemptLogin();
+                    }
+                    if (rolle.equals("Veranstalter")){
+                        Intent i = new Intent(getApplicationContext(), VeranstalterActivity.class);
+                        startActivity(i);
+                        attemptLogin();
+                    }
+                    if (rolle.equals("Teilnehmer")) {
+                        MainActivity main = new MainActivity();
+                        Intent i = new Intent(getApplicationContext(), TeilnehmerActivity.class);
+                        startActivity(i);
+                        attemptLogin();
+                    }
+                }
+                else {
+                    MainActivity main = new MainActivity();
+                    Toast.makeText(getApplicationContext(), "Falsche E-Mail oder Passwort!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    public String LoginSuccessful(String input_email, String input_password){
+
+        for (User user: al_users) {
+            if (user.getEmail().equals(input_email) && user.getPasswort().equals(input_password)){
+                return user.getRolle();
+            }
+        }
+        return null;
+    }
+
+    private void createUsers() {
+        al_users = new ArrayList<>();
+
+
+        al_users.add(new User("Flavius", "Stoianov", "flavi@gmail.com", "1234", "Admin"));
+        al_users.add(new User("Stefan", "Hammerschmied", "stefan@gmail.com", "12345", "Veranstalter"));
+        al_users.add(new User("Oliver", "Dieplinger", "diepes@gmail.com", "123456", "Teilnehmer"));
     }
 
     private void populateAutoComplete() {
@@ -245,6 +288,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return new CursorLoader(this,

@@ -8,6 +8,6 @@ public class VerwaltungPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verwaltung_page);
+        setContentView(R.layout.gui_entwurf);
     }
 }

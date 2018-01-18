@@ -10,4 +10,51 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.oliver.wandertagapp.BenutzerPage">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Veranstaltungen:" />
+
+
+    <ListView
+        android:id="@+id/listViewVeranstaltungen"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="175dp"
+        android:text="Veranstaltung mit Teilnehmer" />
+
+    <ListView
+        android:id="@+id/listViewTeilnehmer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView" />
+
+    <Button
+        android:id="@+id/buttonStartTracking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/listViewTeilnehmer"
+        android:text="Start Tracking" />
+
+
 </RelativeLayout>
