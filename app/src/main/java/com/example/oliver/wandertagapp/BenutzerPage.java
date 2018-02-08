@@ -31,4 +31,10 @@ public class BenutzerPage extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(),MapsActivity.class);
         startActivity(i);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+        startActivity(i);
+    }
 }

@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 String rolle = LoginSuccessful(mEmailView.getText().toString(), mPasswordView.getText().toString());
                 if (rolle!=null) {
                     if (rolle.equals("Admin")) {
-                        Intent i = new Intent(getApplicationContext(), VerwaltungPage.class);
+                        Intent i = new Intent(getApplicationContext(), AdminPage.class);
                         startActivity(i);
                         attemptLogin();
                     }

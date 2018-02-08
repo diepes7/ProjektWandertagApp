@@ -64,4 +64,10 @@ public class OrganisatorPage extends AppCompatActivity {
         ArrayAdapter<Veranstaltung> adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, mainActivity.al_Veranstaltungen);
         lvVeranstaltungen.setAdapter(adapter);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+        startActivity(i);
+    }
 }
