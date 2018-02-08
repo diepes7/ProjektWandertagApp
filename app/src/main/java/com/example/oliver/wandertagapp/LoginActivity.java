@@ -91,21 +91,23 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                String rolle = LoginSuccessful(mEmailView.getText().toString(), mPasswordView.getText().toString());
-                if (rolle!=null) {
-                    if (rolle.equals("Admin")) {
+                User u = LoginSuccessful(mEmailView.getText().toString(), mPasswordView.getText().toString());
+                if (u.getRolle()!=null) {
+                    if (u.getRolle().equals("Admin")) {
                         Intent i = new Intent(getApplicationContext(), AdminPage.class);
                         startActivity(i);
                         attemptLogin();
                     }
-                    if (rolle.equals("Veranstalter")){
+                    if (u.getRolle().equals("Veranstalter")){
                         Intent i = new Intent(getApplicationContext(), OrganisatorPage.class);
                         startActivity(i);
                         attemptLogin();
                     }
-                    if (rolle.equals("Teilnehmer")) {
+                    if (u.getRolle().equals("Teilnehmer")) {
+                        Teilnehmer t = new Teilnehmer(u.getVorname(),u.getNachname(),"11.12.1998","M","Fichtenstoa 18","Ort","Österreich",u.getEmail(),"0100 80 5 6464");
                         MainActivity main = new MainActivity();
                         Intent i = new Intent(getApplicationContext(), TeilnehmerActivity.class);
+                        i.putExtra("teilnehmer",t);
                         startActivity(i);
                         attemptLogin();
                     }
@@ -121,11 +123,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mProgressView = findViewById(R.id.login_progress);
     }
 
-    public String LoginSuccessful(String input_email, String input_password){
+    public User LoginSuccessful(String input_email, String input_password){
 
         for (User user: al_users) {
             if (user.getEmail().equals(input_email) && user.getPasswort().equals(input_password)){
-                return user.getRolle();
+                return user;
             }
         }
         return null;

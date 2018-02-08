@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,6 +26,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class  MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    Teilnehmer t;
+    Veranstaltung v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,23 @@ public class  MapsActivity extends FragmentActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        InitIntent();
+    }
+
+    private void InitIntent() {
+        Intent intent = getIntent();
+        Bundle params = intent.getExtras();
+        if(params!=null)
+        {
+           t = (Teilnehmer) params.get("teilnehmer");
+           v=(Veranstaltung)params.get("veranstaltung");
+        }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        Toast.makeText(getApplicationContext(),v.getBezeichnung()+ " " + t.getEmail() + t.getTelefon(),Toast.LENGTH_LONG).show();
 
         //LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         //Criteria criteria = new Criteria();
