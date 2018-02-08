@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private boolean loginSuccessful;
     private int benutzer_type;              //1 = Admin; 2 = Veranstalter; 3 = Benutzer
     private Intent intent;
-
     public static ArrayList<Veranstaltung> al_Veranstaltungen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

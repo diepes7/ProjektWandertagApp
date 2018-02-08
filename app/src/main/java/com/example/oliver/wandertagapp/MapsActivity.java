@@ -2,6 +2,7 @@ package com.example.oliver.wandertagapp;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -61,6 +62,12 @@ public class  MapsActivity extends FragmentActivity implements OnMapReadyCallbac
 
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(gkr,16));
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(getApplicationContext(),AdminPage.class);
+        startActivity(i);
     }
 }
 
