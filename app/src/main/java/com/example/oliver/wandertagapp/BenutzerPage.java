@@ -14,7 +14,7 @@ public class BenutzerPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_benutzer_page);
+        setContentView(R.layout.activity_organisator_page);
 
         initVariables();
 

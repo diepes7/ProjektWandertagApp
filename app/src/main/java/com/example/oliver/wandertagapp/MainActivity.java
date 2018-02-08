@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,14 +34,21 @@ public class MainActivity extends AppCompatActivity {
     private void initArrayListVeranstaltungen() {
         al_Veranstaltungen = new ArrayList<>();
 
-        al_Veranstaltungen.add(new Veranstaltung("Neujahrs Ausflug", "Teststraße 10", "Grieskirchen", "Österreich", "069912556485", "stefan@gmail.com"));
-        al_Veranstaltungen.add(new Veranstaltung("Oster Ausflug", "Teststraße 14", "Walding", "Österreich", "069912556485", "stefan@gmail.com"));
-        al_Veranstaltungen.add(new Veranstaltung("Sommer Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com"));
-        al_Veranstaltungen.add(new Veranstaltung("Winter Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com"));
-        al_Veranstaltungen.add(new Veranstaltung("Senioren Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com"));
-        al_Veranstaltungen.add(new Veranstaltung("Abend Ausflug", "Wildstraße 8", "München", "Österreich", "069912556485", "stefan@gmail.com"));
-        al_Veranstaltungen.add(new Veranstaltung("Frühlings Ausflug", "Wildstraße 8", "Wien", "Österreich", "069912556485", "stefan@gmail.com"));
-        al_Veranstaltungen.add(new Veranstaltung("Herbst Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com"));
+        List<Teilnehmer> teilnehmerList = new ArrayList<>();
+        teilnehmerList.add(new Teilnehmer("Oliver", "Dieplinger", "12.02.1999", "M", "Königsdorf 27", "St. Agatha", "Österreich", "olivero.dieplinger@gmail.com", "069918338186"));
+        teilnehmerList.add(new Teilnehmer("Stefan", "Hammerschmied", "12.02.1999", "M", "Königsdorf 27", "St. Agatha", "Österreich", "olivero.dieplinger@gmail.com", "069918338186"));
+        teilnehmerList.add(new Teilnehmer("Flavius", "Stoianov", "12.02.1999", "M", "Königsdorf 27", "St. Agatha", "Österreich", "olivero.dieplinger@gmail.com", "069918338186"));
+        teilnehmerList.add(new Teilnehmer("Bruce", "Lang", "12.02.1999", "M", "Königsdorf 27", "St. Agatha", "Österreich", "olivero.dieplinger@gmail.com", "069918338186"));
+        teilnehmerList.add(new Teilnehmer("Max", "Haslehner", "12.02.1999", "M", "Königsdorf 27", "St. Agatha", "Österreich", "olivero.dieplinger@gmail.com", "069918338186"));
+
+        al_Veranstaltungen.add(new Veranstaltung("Neujahrs Ausflug", "Teststraße 10", "Grieskirchen", "Österreich", "069912556485", "stefan@gmail.com", teilnehmerList));
+        al_Veranstaltungen.add(new Veranstaltung("Oster Ausflug", "Teststraße 14", "Walding", "Österreich", "069912556485", "stefan@gmail.com", teilnehmerList));
+        al_Veranstaltungen.add(new Veranstaltung("Sommer Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com", teilnehmerList));
+        al_Veranstaltungen.add(new Veranstaltung("Winter Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com", teilnehmerList));
+        al_Veranstaltungen.add(new Veranstaltung("Senioren Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com", teilnehmerList));
+        al_Veranstaltungen.add(new Veranstaltung("Abend Ausflug", "Wildstraße 8", "München", "Österreich", "069912556485", "stefan@gmail.com", teilnehmerList));
+        al_Veranstaltungen.add(new Veranstaltung("Frühlings Ausflug", "Wildstraße 8", "Wien", "Österreich", "069912556485", "stefan@gmail.com", teilnehmerList));
+        al_Veranstaltungen.add(new Veranstaltung("Herbst Ausflug", "Wildstraße 8", "München", "Deutschland", "069912556485", "stefan@gmail.com", teilnehmerList));
 
     }
     /*

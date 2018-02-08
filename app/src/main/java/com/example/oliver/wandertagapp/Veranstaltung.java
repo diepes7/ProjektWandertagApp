@@ -1,5 +1,7 @@
 package com.example.oliver.wandertagapp;
 
+import java.util.List;
+
 /**
  * Created by Oliver on 18.01.2018.
  */
@@ -11,14 +13,16 @@ public class Veranstaltung {
     private String land;
     private String telefon;
     private String email;
+    private List<Teilnehmer> teilnehmerList;
 
-    public Veranstaltung(String bezeichnung, String strasse, String ort, String land, String telefon, String email) {
+    public Veranstaltung(String bezeichnung, String strasse, String ort, String land, String telefon, String email, List<Teilnehmer> teilnehmerList) {
         this.bezeichnung = bezeichnung;
         Strasse = strasse;
         this.ort = ort;
         this.land = land;
         this.telefon = telefon;
         this.email = email;
+        this.teilnehmerList = teilnehmerList;
     }
 
     public String getBezeichnung() {
@@ -67,6 +71,14 @@ public class Veranstaltung {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Teilnehmer> getTeilnehmerList() {
+        return teilnehmerList;
+    }
+
+    public void setTeilnehmerList(List<Teilnehmer> teilnehmerList) {
+        this.teilnehmerList = teilnehmerList;
     }
 
     @Override

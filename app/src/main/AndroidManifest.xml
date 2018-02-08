@@ -48,7 +48,13 @@
 
         <activity android:name=".MapsActivity" />
         <activity android:name=".TeilnehmerActivity" />
-        <activity android:name=".VeranstalterActivity"></activity>
+        <activity android:name=".OrganisatorPage" />
+        <activity android:name=".VeranstaltungErstellen" />
+        <activity android:name=".Verastaltung_bearbeiten_loeschen" />
+        <activity android:name=".OrganisatorErstellen" />
+        <activity android:name=".Organisator_bearbeiten_loeschen" />
+        <activity android:name=".TeilnehmerErstellen" />
+        <activity android:name=".Teilnehmer_bearbeiten_loeschen"></activity>
     </application>
 
 </manifest>

@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         attemptLogin();
                     }
                     if (rolle.equals("Veranstalter")){
-                        Intent i = new Intent(getApplicationContext(), VeranstalterActivity.class);
+                        Intent i = new Intent(getApplicationContext(), OrganisatorPage.class);
                         startActivity(i);
                         attemptLogin();
                     }
@@ -249,7 +249,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return true;
     }
 
     /**

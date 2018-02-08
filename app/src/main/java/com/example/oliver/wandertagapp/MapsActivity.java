@@ -38,8 +38,9 @@ public class  MapsActivity extends FragmentActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Criteria criteria = new Criteria();
+
+        //LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        //Criteria criteria = new Criteria();
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -50,11 +51,11 @@ public class  MapsActivity extends FragmentActivity implements OnMapReadyCallbac
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
-        double lat = location.getLatitude();
-        double lng = location.getLongitude();
-        Log.i ("Location", lat + "" + lng);
-        LatLng gkr = new LatLng(lat, lng);
+        //Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
+        //double lat = location.getLatitude();
+        //double lng = location.getLongitude();
+        //Log.i ("Location", lat + "" + lng);
+        LatLng gkr = new LatLng(48.235486, 13.835888);
         mMap.addMarker(new MarkerOptions().position(gkr).title("Marker at HTL-Grieskirchen"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(gkr));
 

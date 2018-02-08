@@ -20,10 +20,12 @@
             android:layout_height="120dp"
             android:id="@+id/button4"
             android:layout_weight="1"
-
+            android:textSize="12dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:fontFamily="sans-serif-medium" />
+            android:fontFamily="sans-serif-medium"
+
+            />
 
         <Button
             android:text="Veranstaltungen löschen/bearbeiten"
@@ -31,11 +33,12 @@
             android:layout_height="120dp"
             android:id="@+id/button5"
             android:layout_weight="1"
+            android:textSize="12dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginStart="25dp" />
+
+            />
 
 </LinearLayout>
     <LinearLayout
@@ -52,6 +55,7 @@
                 android:layout_height="120dp"
                 android:id="@+id/button3"
                 android:layout_weight="1"
+                android:textSize="12dp"
                 android:layout_alignBaseline="@+id/button2"
                 android:layout_alignBottom="@+id/button2"
                 android:layout_alignParentRight="true"
@@ -63,11 +67,11 @@
                 android:layout_height="120dp"
                 android:id="@+id/button2"
                 android:layout_weight="1"
+                android:textSize="12dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginLeft="25dp"
-                android:layout_marginStart="25dp" />
+/>
         </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -83,6 +87,7 @@
             android:layout_height="120dp"
             android:id="@+id/button33"
             android:layout_weight="1"
+            android:textSize="12dp"
             android:layout_alignBaseline="@+id/button2"
             android:layout_alignBottom="@+id/button2"
             android:layout_alignParentRight="true"
@@ -94,10 +99,11 @@
             android:layout_height="120dp"
             android:id="@+id/button9"
             android:layout_weight="1"
+            android:textSize="12dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="25dp"
+
  />
     </LinearLayout>
     <LinearLayout
@@ -114,6 +120,7 @@
             android:layout_height="80dp"
             android:id="@+id/button6"
             android:layout_weight="1"
+            android:textSize="12dp"
             android:layout_alignBaseline="@+id/button2"
             android:layout_alignBottom="@+id/button2"
             android:layout_alignParentRight="true"
