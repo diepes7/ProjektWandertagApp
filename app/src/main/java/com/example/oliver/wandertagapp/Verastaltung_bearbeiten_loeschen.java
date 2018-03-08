@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -23,8 +24,13 @@ public class Verastaltung_bearbeiten_loeschen extends AppCompatActivity {
     EditText etEndDatum;
     EditText etArt;
     EditText etBemerkung;
-    EditText etVeranstaltung;
-    EditText etAktiv;
+    EditText etVeranstalter;
+    EditText etStrasse;
+    EditText etOrt;
+    EditText etLand;
+    EditText etTelefon;
+    EditText etEmail;
+    CheckBox cbAktiv;
     Button btnSpeichern;
 
     private MainActivity main = new MainActivity();
@@ -76,20 +82,49 @@ public class Verastaltung_bearbeiten_loeschen extends AppCompatActivity {
                         AlertDialog.Builder dialog = new AlertDialog.Builder(Verastaltung_bearbeiten_loeschen.this);
                         // ...Irrelevant code for customizing the buttons and title
                         LayoutInflater inflater = getLayoutInflater();
-                        View dialogView = inflater.inflate(R.layout.alert_bearbeiten, null);
-                        dialog.setView(dialogView);
+                        View v = inflater.inflate(R.layout.alert_bearbeiten, null);
+                        dialog.setView(v);
 
                         final AlertDialog alert = dialog.create();
                         alertDialog.dismiss();
                         alert.show();
 
-
+                        initVariables(v);
+                        Veranstaltung veranstaltung = (Veranstaltung) lvVeranstaltungen.getItemAtPosition(itemAt);
+                        etBezeichnung.setText(veranstaltung.getBezeichnung());
+                        etStartDatum.setText(veranstaltung.getStartDatum().toString());
+                        etEndDatum.setText(veranstaltung.getEndDatum().toString());
+                        etArt.setText(veranstaltung.getArt_Veranstaltung());
+                        etBemerkung.setText(veranstaltung.getBemerkung());
+                        etVeranstalter.setText(veranstaltung.getVeranstalter());
+                        etStrasse.setText(veranstaltung.getStrasse()+ "");
+                        etOrt.setText(veranstaltung.getOrt());
+                        etLand.setText(veranstaltung.getLand());
+                        etTelefon.setText(veranstaltung.getTelefon());
+                        etEmail.setText(veranstaltung.getEmail());
+                        cbAktiv.setChecked(veranstaltung.isAktiv());
                     }
                 });
                 return true;
             }
         });
 
+    }
+
+    public void initVariables(View dialogView){
+        etBezeichnung = (EditText) dialogView.findViewById(R.id.editTextBezeichnung);
+        etStartDatum = (EditText) dialogView.findViewById(R.id.editTextStartDatum);
+        etEndDatum = (EditText) dialogView.findViewById(R.id.editTextEndDatum);
+        etArt = (EditText) dialogView.findViewById(R.id.editTextArt);
+        etBemerkung = (EditText) dialogView.findViewById(R.id.editTextBemerkung);
+        etVeranstalter = (EditText) dialogView.findViewById(R.id.editTextVeranstalter);
+        etStrasse = (EditText) dialogView.findViewById(R.id.editTextStrasse);
+        etOrt = (EditText) dialogView.findViewById(R.id.editTextOrt);
+        etLand = (EditText) dialogView.findViewById(R.id.editTextLand);
+        etTelefon = (EditText) dialogView.findViewById(R.id.editTextTelefon);
+        etEmail = (EditText) dialogView.findViewById(R.id.editTextEmail);
+        cbAktiv = (CheckBox) dialogView.findViewById(R.id.checkBoxAktiv);
+        btnSpeichern = (Button) dialogView.findViewById(R.id.buttonSpeichern);
     }
 
     private void setLvAdapter() {

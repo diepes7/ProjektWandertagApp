@@ -1,77 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Bezeichnung"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/editTextBezeichnung" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Start Datum"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/editTextDatum" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="End Dataum"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/editTextEndDatum" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Art der Veranstaltung"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/editTextArt" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Bemerkung"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/editTextBemerkung" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Veranstaltung"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/editTextVeranstaltung" />
+                <EditText
+                    android:id="@+id/editTextBezeichnung"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Bezeichnung"
+                    android:text="" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Aktiv"
-        android:text=""
-        android:ems="10"
-        android:id="@+id/editTextAktiv" />
+                <EditText
+                    android:id="@+id/editTextStartDatum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Start Datum"
+                    android:inputType="date" />
 
-    <Button
-        android:text="Speichern"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Speichern" />
 
-</LinearLayout>
+                <EditText
+                    android:id="@+id/editTextEndDatum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="End Datum"
+                    android:inputType="date" />
+
+                <EditText
+                    android:id="@+id/editTextArt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Art der Veranstaltung"
+                    android:inputType="textPersonName"
+                    android:text="" />
+
+
+                <EditText
+                    android:id="@+id/editTextBemerkung"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Bemerkung"
+                    android:text="" />
+
+
+                <EditText
+                    android:id="@+id/editTextVeranstalter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Veranstalter"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/editTextStrasse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Strasse"
+                    android:inputType="text"
+                    android:text="" />
+
+
+                <EditText
+                    android:id="@+id/editTextOrt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Ort"
+                    android:inputType="text"
+                    android:text="" />
+
+
+                <EditText
+                    android:id="@+id/editTextLand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Land"
+                    android:inputType="text"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/editTextTelefon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Telefon"
+                    android:inputType="text"
+                    android:text="" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="E-mail"
+                    android:inputType="text"
+                    android:text="" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxAktiv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Aktiv"
+                    android:inputType="text"
+                    android:text="" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/buttonSpeichern"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="Speichern"
+            android:layout_weight="1"
+            android:paddingBottom="0dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
