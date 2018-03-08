@@ -1,10 +1,12 @@
 package com.example.oliver.wandertagapp;
 
+import java.io.Serializable;
+
 /**
  * Created by Oliver on 18.01.2018.
  */
 
-public class User {
+public class User implements Serializable{
     private String vorname;
     private String nachname;
     private String email;
