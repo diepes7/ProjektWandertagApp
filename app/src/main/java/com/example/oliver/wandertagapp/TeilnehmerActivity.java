@@ -39,8 +39,8 @@ public class TeilnehmerActivity extends AppCompatActivity {
         lv_Veranstaltungen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Veranstaltung v = (Veranstaltung) lv_Veranstaltungen.getItemAtPosition(position);
-                Intent i = new Intent(getApplicationContext(),MapsActivity.class);
+                Veranstaltung v = (Veranstaltung) main.al_Veranstaltungen.get(position);
+                Intent i = new Intent(getApplicationContext(),TeilnehmerDetailActivity.class);
                 i.putExtra("veranstaltung",v);
                 i.putExtra("teilnehmer",t);
                 startActivity(i);

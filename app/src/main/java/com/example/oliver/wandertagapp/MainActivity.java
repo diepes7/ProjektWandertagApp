@@ -86,7 +86,61 @@ public class MainActivity extends AppCompatActivity {
     }
 */
 
+    public EditText getEditTextEmail() {
+        return editTextEmail;
+    }
 
+    public void setEditTextEmail(EditText editTextEmail) {
+        this.editTextEmail = editTextEmail;
+    }
 
+    public EditText getEditTextPassword() {
+        return editTextPassword;
+    }
 
+    public void setEditTextPassword(EditText editTextPassword) {
+        this.editTextPassword = editTextPassword;
+    }
+
+    public Button getBtnAnmeldenClick() {
+        return btnAnmeldenClick;
+    }
+
+    public void setBtnAnmeldenClick(Button btnAnmeldenClick) {
+        this.btnAnmeldenClick = btnAnmeldenClick;
+    }
+
+    public boolean isLoginSuccessful() {
+        return loginSuccessful;
+    }
+
+    public void setLoginSuccessful(boolean loginSuccessful) {
+        this.loginSuccessful = loginSuccessful;
+    }
+
+    public int getBenutzer_type() {
+        return benutzer_type;
+    }
+
+    public void setBenutzer_type(int benutzer_type) {
+        this.benutzer_type = benutzer_type;
+    }
+
+    @Override
+    public Intent getIntent() {
+        return intent;
+    }
+
+    @Override
+    public void setIntent(Intent intent) {
+        this.intent = intent;
+    }
+
+    public static ArrayList<Veranstaltung> getAl_Veranstaltungen() {
+        return al_Veranstaltungen;
+    }
+
+    public static void setAl_Veranstaltungen(ArrayList<Veranstaltung> al_Veranstaltungen) {
+        MainActivity.al_Veranstaltungen = al_Veranstaltungen;
+    }
 }

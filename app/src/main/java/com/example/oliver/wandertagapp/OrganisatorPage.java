@@ -18,6 +18,8 @@ public class OrganisatorPage extends AppCompatActivity {
     private ListView lvTeilnehmer;
     private Button startTracking;
     private MainActivity mainActivity;
+    Teilnehmer t;
+    Veranstaltung v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,8 @@ public class OrganisatorPage extends AppCompatActivity {
         startTracking = (Button) findViewById(R.id.buttonStartTracking);
         mainActivity = new MainActivity();
 
+
+
         startTracking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +48,7 @@ public class OrganisatorPage extends AppCompatActivity {
         lvVeranstaltungen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Veranstaltung v = (Veranstaltung) lvVeranstaltungen.getItemAtPosition(i);
+                v = (Veranstaltung) lvVeranstaltungen.getItemAtPosition(i);
                 setLvTeilnehmerItems(v.getTeilnehmerList());
             }
         });
@@ -53,10 +57,19 @@ public class OrganisatorPage extends AppCompatActivity {
     private void setLvTeilnehmerItems(List<Teilnehmer> teinehmer) {
         ArrayAdapter<Teilnehmer> adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, teinehmer);
         lvTeilnehmer.setAdapter(adapter);
+
+        lvTeilnehmer.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                t= (Teilnehmer) lvTeilnehmer.getItemAtPosition(position);
+            }
+        });
     }
 
     private void showMapView() {
         Intent i = new Intent(getApplicationContext(),MapsActivity.class);
+        i.putExtra("veranstaltung",v);
+        i.putExtra("teilnehmer",t);
         startActivity(i);
     }
 

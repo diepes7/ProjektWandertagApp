@@ -16,6 +16,8 @@ public class Teilnehmer implements Serializable{
     private String land;
     private String email;
     private String telefon;
+    private double lat;
+    private double longi;
 
     public Teilnehmer(String vorname, String nachname, String geburtsdatum, String geschlecht, String strasse, String ort, String land, String email, String telefon) {
         this.vorname = vorname;
@@ -27,6 +29,19 @@ public class Teilnehmer implements Serializable{
         this.land = land;
         this.email = email;
         this.telefon = telefon;
+    }
+    public Teilnehmer(String vorname, String nachname, String geburtsdatum, String geschlecht, String strasse, String ort, String land, String email, String telefon,double lat,double longi) {
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.geburtsdatum = geburtsdatum;
+        this.geschlecht = geschlecht;
+        this.strasse = strasse;
+        this.ort = ort;
+        this.land = land;
+        this.email = email;
+        this.telefon = telefon;
+        this.lat = lat;
+        this.longi = longi;
     }
 
     public String getVorname() {
@@ -99,6 +114,22 @@ public class Teilnehmer implements Serializable{
 
     public void setTelefon(String telefon) {
         this.telefon = telefon;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLongi() {
+        return longi;
+    }
+
+    public void setLongi(double longi) {
+        this.longi = longi;
     }
 
     @Override

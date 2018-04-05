@@ -136,7 +136,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private void createUsers() {
         al_users = new ArrayList<>();
 
-
         al_users.add(new User("Flavius", "Stoianov", "flavi@gmail.com", "1234", "Admin"));
         al_users.add(new User("Stefan", "Hammerschmied", "stefan@gmail.com", "12345", "Veranstalter"));
         al_users.add(new User("Oliver", "Dieplinger", "diepes@gmail.com", "123456", "Teilnehmer"));

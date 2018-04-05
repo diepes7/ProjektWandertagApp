@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.oliver.wandertagapp.TeilnehmerDetailActivity">
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Landtxv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="23dp"
+        android:layout_y="214dp"
+        android:text="Land"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <TextView
+        android:id="@+id/orttxv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="22dp"
+        android:layout_y="250dp"
+        android:text="Ort"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="165dp" />
+
+    <TextView
+        android:id="@+id/startdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="155dp"
+        android:layout_y="147dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <TextView
+        android:id="@+id/detailstxv"
+        android:layout_width="316dp"
+        android:layout_height="46dp"
+        android:layout_x="0dp"
+        android:layout_y="1dp"
+        android:text="Details zur Veranstaltung"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/veranstaltungstxv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="76dp"
+        android:text="Veranstaltungsname"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <TextView
+        android:id="@+id/veranstaltungsname"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_x="155dp"
+        android:layout_y="76dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <TextView
+        android:id="@+id/land"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="155dp"
+        android:layout_y="216dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <TextView
+        android:id="@+id/ort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="156dp"
+        android:layout_y="248dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="22dp"
+        android:layout_y="144dp"
+        android:text="Start Datum"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <Button
+        android:id="@+id/teilbtn"
+        android:layout_width="161dp"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:layout_x="143dp"
+        android:layout_y="446dp"
+        android:text="teilnehmen"
+        android:onClick="teilnehmerdetailbtn"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="23dp"
+        android:layout_y="443dp"
+        android:text="ToggleButton"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="382dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/teilbtn"
+        android:layout_marginBottom="17dp"
+        android:layout_toEndOf="@+id/orttxv"
+        android:layout_toRightOf="@+id/orttxv"
+        android:layout_x="25dp"
+        android:layout_y="411dp"
+        android:text="Tracking"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="382dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="22dp"
+        android:layout_y="180dp"
+        android:text="End Datum"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <TextView
+        android:id="@+id/enddate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="157dp"
+        android:layout_y="180dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <TextView
+        android:id="@+id/ds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="110dp"
+        android:text="Bezeichnung"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <TextView
+        android:id="@+id/bezeichnung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="156dp"
+        android:layout_y="111dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="236dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="24dp"
+        android:layout_y="282dp"
+        android:text="Straße"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="272dp" />
+
+    <TextView
+        android:id="@+id/straße"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="156dp"
+        android:layout_y="284dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="272dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="24dp"
+        android:layout_y="358dp"
+        android:text="Telefon"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <TextView
+        android:id="@+id/telefon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="156dp"
+        android:layout_y="360dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="308dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="24dp"
+        android:layout_y="321dp"
+        android:text="Email"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="346dp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="155dp"
+        android:layout_y="322dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="188dp"
+        tools:layout_editor_absoluteY="346dp" />
+</AbsoluteLayout>

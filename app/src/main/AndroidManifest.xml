@@ -14,6 +14,8 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
 
     <application
         android:allowBackup="true"
@@ -53,7 +55,10 @@
         <activity android:name=".OrganisatorErstellen" />
         <activity android:name=".Organisator_bearbeiten_loeschen" />
         <activity android:name=".TeilnehmerErstellen" />
-        <activity android:name=".Teilnehmer_bearbeiten_loeschen"></activity>
+        <activity android:name=".Teilnehmer_bearbeiten_loeschen" />
+        <activity
+            android:name=".TeilnehmerDetailActivity"
+            android:label="@string/title_activity_teilnehmer_detail"></activity>
     </application>
 
 </manifest>
