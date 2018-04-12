@@ -123,13 +123,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         };
     }
 
-    @SuppressLint("MissingPermission")
     @Override
     protected void onResume() {
         Toast.makeText(getApplicationContext(), "onResume", Toast.LENGTH_LONG);
         super.onResume();
         if (!isGpsAllowed) return;
-        locMan = (LocationManager)getSystemService(getApplicationContext().LOCATION_SERVICE);
+        locMan = (LocationManager) getSystemService(getApplicationContext().LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         locMan.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, listener);
     }
 
@@ -157,9 +166,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         Location loc = locMan.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         LatLng latlng = new LatLng(loc.getLatitude(),loc.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(latlng).title(t.getVorname()+" "+t.getNachname()));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng,16));
+        mMap.addMarker(new MarkerOptions().position(latlng).title(t.getVorname()+" "+t.getNachname()));
         locMan = (LocationManager)getSystemService(getApplicationContext().LOCATION_SERVICE);
         locMan.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, listener);
     }
